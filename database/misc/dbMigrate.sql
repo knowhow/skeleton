@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS skeleton.t1
 );
 
 
-$$) WHERE  u2.package_version('skeleton') <= 0;
+$$) WHERE  u2.package_version('skeleton') < 1;
 ------------------------------------------------
 -- end 
 -------------------------------------------------
@@ -31,7 +31,7 @@ $$) WHERE  u2.package_version('skeleton') <= 0;
 
 
 ------------------------------------------------
--- 0.1.0, 0.2.0
+-- 0.1.0
 -- create table t2
 ------------------------------------------------
 SELECT u2.execute($$
@@ -45,13 +45,13 @@ CREATE TABLE IF NOT EXISTS skeleton.t2
 
 
 $$)
-WHERE NOT u2.package_version('skeleton') <= 200;
+WHERE NOT u2.package_version('skeleton') < 100;
 ------------------------------------------------
 -- end 
 -------------------------------------------------
 
 ------------------------------------------------
--- 0.3.0 - 0.3.99
+-- 0.3.17
 -- create table t3
 ------------------------------------------------
 SELECT u2.execute($$
@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS skeleton.t3
 
 
 $$)
-WHERE NOT u2.package_version('skeleton') <= 399;
+WHERE u2.package_version('skeleton') < 317;
 
 
 ------------------------------------------------
@@ -74,14 +74,14 @@ WHERE NOT u2.package_version('skeleton') <= 399;
 ------------------------------------------------
 SELECT u2.execute($$
 
-DROP TABLE skeleton.t1;
+DROP TABLE IF EXISTS skeleton.t1;
 
 $$)
-WHERE NOT u2.package_version('skeleton') <= 400;
+WHERE u2.package_version('skeleton') < 400;
 
 
 ------------------------------------------------
--- 0.5.x
+-- 0.5.2
 -- create table t1 v2
 ------------------------------------------------
 SELECT u2.execute($$
@@ -93,7 +93,16 @@ CREATE TABLE IF NOT EXISTS skeleton.t1
     n1v2 numeric(25,2)
 );
 
-
-
 $$)
-WHERE NOT u2.package_version('skeleton') <= 599;
+WHERE u2.package_version('skeleton') < 502;
+
+------------------------------------------------
+-- 1.1.0
+-- alter table t2
+------------------------------------------------
+SELECT u2.execute($$
+
+ALTER TABLE skeleton.t2
+            ADD notes TEXT;
+$$)
+WHERE u2.package_version('skeleton') < 10100;
