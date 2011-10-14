@@ -120,8 +120,23 @@ WHERE  (u2.knowhow_package_version('skeleton') < 10100);
 -- end 
 -------------------------------------------------
 
+------------------------------------------------
+-- 2.1.0
+-- alter table t1 - add notes
+------------------------------------------------
+SELECT u2.execute($$
+
+ALTER TABLE skeleton.t1
+            ADD notes TEXT;
+$$) 
+WHERE  (u2.knowhow_package_version('skeleton') < 20100);
+-----------------------------------------------
+-- end 
+-------------------------------------------------
+
+
 
 -- ##########################################
 -- na kraju setujemo novu verziju iz pkghead
-u2.set_knowhow_version('skeleton');
+SELECT u2.set_knowhow_package_version('skeleton');
 -- ##########################################
