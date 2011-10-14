@@ -74,7 +74,7 @@ WHERE NOT u2.package_version('skeleton') <= 399;
 ------------------------------------------------
 SELECT u2.execute($$
 
-DROP TABLE t1;
+DROP TABLE skeleton.t1;
 
 $$)
 WHERE NOT u2.package_version('skeleton') <= 400;
