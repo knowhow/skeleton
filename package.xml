@@ -2,7 +2,7 @@
          name="skeleton"
          developer="hernad@bring.out.ba"
          descrip="xtuple skeleton package"
-         version="1.1.2"
+         version="2.0.0"
          updater="2.2.4">
   <pkgnotes></pkgnotes>
 
@@ -15,7 +15,7 @@
             bos: Morate prvo instalirati u2 package.
             eng: Prerequisite: u2 package. 
           </message>
-  </prerequisite>
+   </prerequisite>
 
   <prerequisite type="Query"
                 name="xTuple/knowhow ERP version">
@@ -52,10 +52,10 @@
      Privilegija 1 - dummy
   </loadpriv>  
   
-  <script file="database/misc/initPackage.sql"  order="0" />
-  <script file="database/misc/dbMigrate.sql"  order="1" />
+  <script file="database/misc/init_package.sql"  order="0" />
+  <script file="database/misc/db_migrate.sql"  order="1" />
   
-  <loadappscript file="client/scripts/initMenu.js" name="initMenu" order="0"/>
+  <loadappscript file="client/scripts/init_menu.js" name="init_menu" order="0"/>
 
 
   <!--
