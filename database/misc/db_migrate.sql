@@ -14,8 +14,6 @@
 -- create table t1
 ------------------------------------------------
 
-
-
 SELECT u2.execute($$
 
 CREATE TABLE IF NOT EXISTS skeleton.t1
@@ -26,7 +24,7 @@ CREATE TABLE IF NOT EXISTS skeleton.t1
 );
 
 $$) 
-WHERE (u2.package_version('skeleton') < 1);
+WHERE (u2.knowhow_package_version('skeleton') < 1);
 ------------------------------------------------
 -- end 
 -------------------------------------------------
@@ -48,7 +46,7 @@ CREATE TABLE IF NOT EXISTS skeleton.t2
 
 
 $$)
-WHERE (u2.package_version('skeleton') < 100);
+WHERE (u2.knowhow_package_version('skeleton') < 100);
 ------------------------------------------------
 -- end 
 -------------------------------------------------
@@ -68,7 +66,7 @@ CREATE TABLE IF NOT EXISTS skeleton.t3
 
 
 $$)
-WHERE (u2.package_version('skeleton') < 317);
+WHERE (u2.knowhow_package_version('skeleton') < 317);
 
 
 ------------------------------------------------
@@ -80,7 +78,7 @@ SELECT u2.execute($$
 DROP TABLE IF EXISTS skeleton.t1;
 
 $$)
-WHERE (u2.package_version('skeleton') < 400);
+WHERE (u2.knowhow_package_version('skeleton') < 400);
 
 
 ------------------------------------------------
@@ -97,7 +95,7 @@ CREATE TABLE IF NOT EXISTS skeleton.t1
 );
 
 $$)
-WHERE (u2.package_version('skeleton') < 502);
+WHERE (u2.knowhow_package_version('skeleton') < 502);
 
 ------------------------------------------------
 -- 1.1.0
@@ -108,8 +106,8 @@ SELECT u2.execute($$
 ALTER TABLE skeleton.t2
             ADD notes TEXT;
 $$) 
-WHERE (u2.package_version('skeleton') < 10100);
+WHERE (u2.knowhow_package_version('skeleton') < 10100);
 
-
+-- na kraju setujemo novu verziju iz pkghead
 u2.set_knowhow_version('skeleton');
 
