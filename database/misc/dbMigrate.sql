@@ -13,7 +13,7 @@
 -- init
 -- create table t1
 ------------------------------------------------
-SELECT EXECUTE($$
+SELECT u2.execute($$
 
 CREATE TABLE IF NOT EXISTS skeleton.t1
 (
@@ -23,8 +23,7 @@ CREATE TABLE IF NOT EXISTS skeleton.t1
 );
 
 
-$$)
-WHERE  u2.package_version('skeleton') <= 0;
+$$) WHERE  u2.package_version('skeleton') <= 0;
 ------------------------------------------------
 -- end 
 -------------------------------------------------
@@ -35,7 +34,7 @@ WHERE  u2.package_version('skeleton') <= 0;
 -- 0.1.0, 0.2.0
 -- create table t2
 ------------------------------------------------
-SELECT EXECUTE($$
+SELECT u2.execute($$
 
 CREATE TABLE IF NOT EXISTS skeleton.t2
 (
@@ -55,7 +54,7 @@ WHERE NOT u2.package_version('skeleton') <= 200;
 -- 0.3.0 - 0.3.99
 -- create table t3
 ------------------------------------------------
-SELECT EXECUTE($$
+SELECT u2.execute($$
 
 CREATE TABLE IF NOT EXISTS skeleton.t3
 (
@@ -73,7 +72,7 @@ WHERE NOT u2.package_version('skeleton') <= 399;
 -- 0.4.0
 -- drop table t1
 ------------------------------------------------
-SELECT EXECUTE($$
+SELECT u2.execute($$
 
 DROP TABLE t1;
 
@@ -85,7 +84,7 @@ WHERE NOT u2.package_version('skeleton') <= 400;
 -- 0.5.x
 -- create table t1 v2
 ------------------------------------------------
-SELECT EXECUTE($$
+SELECT u2.execute($$
 
 CREATE TABLE IF NOT EXISTS skeleton.t1
 (
