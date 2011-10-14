@@ -67,6 +67,9 @@ CREATE TABLE IF NOT EXISTS skeleton.t3
 
 $$)
 WHERE (u2.knowhow_package_version('skeleton') < 317);
+------------------------------------------------
+-- end 
+-------------------------------------------------
 
 
 ------------------------------------------------
@@ -79,7 +82,9 @@ DROP TABLE IF EXISTS skeleton.t1;
 
 $$)
 WHERE (u2.knowhow_package_version('skeleton') < 400);
-
+------------------------------------------------
+-- end 
+-------------------------------------------------
 
 ------------------------------------------------
 -- 0.5.2
@@ -96,6 +101,10 @@ CREATE TABLE IF NOT EXISTS skeleton.t1
 
 $$)
 WHERE (u2.knowhow_package_version('skeleton') < 502);
+------------------------------------------------
+-- end 
+-------------------------------------------------
+
 
 ------------------------------------------------
 -- 1.1.0
@@ -106,8 +115,13 @@ SELECT u2.execute($$
 ALTER TABLE skeleton.t2
             ADD notes TEXT;
 $$) 
-WHERE (u2.knowhow_package_version('skeleton') < 10100);
+WHERE  (u2.knowhow_package_version('skeleton') < 10100);
+-----------------------------------------------
+-- end 
+-------------------------------------------------
 
+
+-- ##########################################
 -- na kraju setujemo novu verziju iz pkghead
 u2.set_knowhow_version('skeleton');
-
+-- ##########################################
