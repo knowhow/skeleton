@@ -6,7 +6,7 @@
          updater="2.2.4">
   <pkgnotes></pkgnotes>
 
-   <prerequisite type="Query" name="Checking if xtbatch is installed" >
+   <prerequisite type="Query" name="Checking if u2 is installed" >
          <query>SELECT COUNT(*) = 1
                      FROM pkghead
                      WHERE pkghead_name = 'u2';
