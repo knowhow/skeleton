@@ -2,12 +2,12 @@
          name="skeleton"
          developer="hernad@bring.out.ba"
          descrip="xtuple skeleton package"
-         version="0.1.0"
+         version="1.0.0"
          updater="2.2.4">
   <pkgnotes></pkgnotes>
 
   <prerequisite type="Query"
-                name="xTuple ERP version">
+                name="xTuple/knowhow ERP version">
     <query>
       SELECT (SUBSTRING(fetchMetricText('ServerVersion') FOR 1) > '3') 
           OR (SUBSTRING(fetchMetricText('ServerVersion') FOR 1) = '3'
@@ -18,7 +18,7 @@
     </message>
   </prerequisite>
 
-  <prerequisite type="license" name="xTuple Concise EULA">
+  <prerequisite type="license" name="knowhow CPAL license">
     <message>
       &lt;p>
           This file is part of the knowhow ERP, a free and open source
@@ -40,6 +40,9 @@
   <loadpriv name="SkeletonPriviledge1" module="skeleton">
      Privilegija 1 - dummy
   </loadpriv>  
+  
+  <script file="database/misc/initPackage.sql"  order="0" />
+  <script file="database/misc/dbMigrate.sql"  order="1" />
   
   <loadappscript file="client/scripts/initMenu.js" name="initMenu" order="0"/>
 
