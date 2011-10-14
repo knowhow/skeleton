@@ -2,9 +2,20 @@
          name="skeleton"
          developer="hernad@bring.out.ba"
          descrip="xtuple skeleton package"
-         version="1.0.0"
+         version="1.0.1"
          updater="2.2.4">
   <pkgnotes></pkgnotes>
+
+   <prerequisite type="Query" name="Checking if xtbatch is installed" >
+         <query>SELECT COUNT(*) = 1
+                     FROM pkghead
+                     WHERE pkghead_name = 'u2';
+          </query>
+          <message>
+            bos: Morate prvo instalirati u2 package.
+            eng: Prerequisite: u2 package. 
+          </message>
+  </prerequisite>
 
   <prerequisite type="Query"
                 name="xTuple/knowhow ERP version">
