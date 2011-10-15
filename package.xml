@@ -2,7 +2,7 @@
          name="skeleton"
          developer="hernad@bring.out.ba"
          descrip="xtuple skeleton package"
-         version="2.1.0"
+         version="2.2.2"
          updater="2.2.4">
   <pkgnotes></pkgnotes>
 
@@ -55,13 +55,16 @@
   <script file="database/misc/init_package.sql"  order="0" />
   <script file="database/misc/db_migrate.sql"  order="1" />
   
-  <loadappscript file="client/scripts/init_menu.js" name="init_menu" order="0"/>
+  <loadappscript file="client/scripts/init_menu.js" name="initMenu" order="0"/>
+  <loadappscript file="client/scripts/skeleton.js" name="skeleton" order="1"/>
 
 
+  <loadimage file="client/images/calculator.png" name="calculator" />
+
+  <loadappui file="client/uiforms/skeleton.ui" order="0" />
+  
   <!--
 
-  <loadappui file="client/uiforms/frmSkeleton.ui" order="0" />
-  
   <loadmetasql file="client/metasql/rpt_skeleton.mql" />
 
   <loadreport  file="client/reports/rpt_skeleton.xml" />

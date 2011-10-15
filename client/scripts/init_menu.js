@@ -22,6 +22,9 @@ _menuSystem.addMenu(_skeletonMenu);
 // Add actions for newly created menu...
 var skeletonDebugAction = _skeletonMenu.addAction(qsTr("zviz na konzolu debug poruku"), mainwindow);
 
+// otvori "skeleton" formu
+var skeletonOpenFormAction = _skeletonMenu.addAction(qsTr("skeleton forma"), mainwindow);
+
 // Add separator
 // fmkReportMenu.addSeparator();
 //
@@ -31,5 +34,11 @@ function sZvizDebugMsg()
    mainwindow.sReportError("hello knowhow from skeleton package")
 };
 
+function openSkeletonForm()
+{
+      var wind = toolbox.openWindow("skeleton", mainwindow);
+};
+
 // add trigger to the skeletonDebugAction
 skeletonDebugAction.triggered.connect(sZvizDebugMsg);
+skeletonOpenFormAction.triggered.connect(openSkeletonForm);
